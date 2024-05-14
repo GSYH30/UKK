@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Martian Mono", monospace; 
+}
+.container {
+    background-color: #242329;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle, #535353 1px, transparent 1px),
+        #242329; /* Warna latar belakang */
+    background-size: 20px 20px; /* Ukuran dot */
+
+}
+
+.background {
+    padding: 30px;
+    border-radius: 30px;
+    border: 1px solid #535353;
+    background-color: #28272E; 
+    text-align: center;
+}
+
+.dalam-container h1 {
+    font-weight: 250;
+    text-align: center;
+}
+
+
+.dalam-container i {
+
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: yellow;
+    display: flex;
+}
+
+label {
+
+    top: 15px;
+}
+
+.rgb {
+    opacity: 1;
+    transform: translateY(-120px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    animation: fadeInContainer 1s ease forwards; /* Container muncul terlebih dahulu */
+}
+
+.background {
+    opacity: 1;
+    transform: translateY(-100px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    animation: fadeInContainer 1s ease forwards; /* Container muncul terlebih dahulu */
+}
+
+.background > i,
+.background > h1,
+.background > label, 
+    .background > a {
+
+    opacity: 0;
+    transform: translateY(-20px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.background > i {
+    animation: fadeInSlideIn 1s ease 0.2s forwards; /* H1 muncul setelah 0.6 detik */
+}
+
+.background > h1 {
+    animation: fadeInSlideIn 1s ease 0.4s forwards; /* H1 muncul setelah 0.6 detik */
+}
+
+.background > label {
+    animation: fadeInSlideIn 1s ease 0.6s forwards; /* Paragraf muncul setelah 0.8 detik */
+}
+
+
+.background > a {
+    animation: fadeInSlideIn 1s ease 0.9s forwards; /* Ikon muncul setelah 1.4 detik */
+}
+
+@keyframes fadeInSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Berakhir di posisi awal */
+    }
+}
+
+@keyframes fadeInContainer {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Berakhir di posisi awal */
+    }
+}
+
+.dalam-container a {
+    color: #ff5500;
+}
+
+.rgb::before , .rgb::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
+    background-size: 400%;
+    width: calc(100%);
+    height: calc(100%);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+    border-radius: 30px;
+}
+
+@keyframes animate {
+        0% {
+            background-position: 0 0;
+        }
+        50% {
+            background-position: 400% 0;
+        }
+        100% {
+            background-position: 0 0;
+        }
+}
+
+.rgb::after {
+    filter: blur(40px);
+    opacity: 0.99px;
+}
+

@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.container {
+    background-color:#222831;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+    radial-gradient(circle, #535353 1px, transparent 1px),
+    #242329; /* Warna latar belakang */
+    background-size: 20px 20px; /* Ukuran dot */
+}
+
+.dalam-container {
+    border-radius: 7px;
+    background-color: #28272E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.judul {
+    color: white;
+    padding-top: 20px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.isi-container {
+    margin: 20px;
+}
+
+.informasi {
+    color:#FFFFFF9C;
+    font-size: 15px;
+}
+
+.informasi {
+    margin: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.icon {
+    padding-bottom: 5px;
+    width: 100%;
+    font-size: 120px;
+    color: white;
+    text-align: center;
+}
+
+.button {
+    
+    padding-top: 20px;
+    text-align: center;
+}
+
+.button a {
+    
+    text-align: center;
+    text-decoration: none;
+    color: #222831;
+    padding: 7px;
+    width: 20px;
+}
+
+.button button {
+    cursor: pointer;
+    font-weight: 1000;
+    padding: 7px;
+    width: 100px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.button button:hover {
+    font-size: 13px;
+    transition: 0.3s;
+    box-shadow: 7px 7px 7px;
+    padding: 7px;
+    width: 80px;
+    text-align: center;
+    border-radius: 7px;
+    margin: 7px;
+    background-color: gold;
+}
+
+.rgb {
+    opacity: 1;
+    transform: translateY(-120px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    animation: fadeInContainer 1s ease forwards; /* Container muncul terlebih dahulu */
+}
+
+.background {
+    opacity: 1;
+    transform: translateY(-120px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    animation: fadeInContainer 1s ease forwards; /* Container muncul terlebih dahulu */
+}
+
+.isi-container {
+    opacity: 0;
+    transform: translateY(-100px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    animation: fadeInContainer 1s ease forwards; /* Container muncul terlebih dahulu */
+}
+
+
+.isi-container > i,
+.isi-container > h1,
+.isi-container > label,
+.isi-container > div.button,
+.isi-container > div.a,
+.isi-container > div.icon {
+    opacity: 0;
+    transform: translateY(-20px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.isi-container > div:nth-child(1) {
+    animation: fadeInSlideIn 1s ease 0.2s forwards; /* Gambar muncul setelah 0.2 detik */
+}
+
+.isi-container > i {
+    animation: fadeInSlideIn 1s ease 0.4s forwards; /* Welcome muncul setelah 0.4 detik */
+}
+
+.isi-container > h1 {
+    animation: fadeInSlideIn 1s ease 0.6s forwards; /* H1 muncul setelah 0.6 detik */
+}
+
+.isi-container > label {
+    animation: fadeInSlideIn 1s ease 0.8s forwards; /* H1 muncul setelah 0.6 detik */
+}
+
+.isi-container > div.button {
+    animation: fadeInSlideIn 1s ease 1s forwards; /* Paragraf muncul setelah 0.8 detik */
+}
+
+.isi-container > div.a {
+    animation: fadeInSlideIn 1s ease 1s forwards; /* Tombol muncul setelah 1 detik */
+}
+
+.isi-container > div.icon {
+    animation: fadeInSlideIn 1s ease 1.2s forwards; /* Ikon muncul setelah 1.4 detik */
+}
+
+@keyframes fadeInSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Berakhir di posisi awal */
+    }
+}
+
+@keyframes fadeInContainer {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Berakhir di posisi awal */
+    }
+}
+
+.rgb::before , .rgb::after {
+    content: '';
+    position: absolute;
+
+    top: 0px;
+    background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
+    background-size: 400%;
+    width: calc(100%);
+    height: calc(100%);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+    border-radius: 30px;
+}
+
+@keyframes animate {
+        0% {
+            background-position: 0 0;
+        }
+        50% {
+            background-position: 400% 0;
+        }
+        100% {
+            background-position: 0 0;
+        }
+}
+
+.rgb::after {
+    filter: blur(40px);
+    opacity: 0.99px;
+}
+
+.background {
+    border-radius: 12px;
+    background-color: #28272E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

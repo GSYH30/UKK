@@ -1,0 +1,351 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Martian Mono", monospace; 
+}
+.container {
+    background-color: #242329;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle, #535353 1px, transparent 1px),
+        #242329; /* Warna latar belakang */
+    background-size: 20px 20px; /* Ukuran dot */
+
+
+}
+
+.button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+.button i {
+    font-size: 15px;
+    color: white;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.button i:hover {
+    transition: 0.3s;
+    background-color: transparent;
+    color: red;
+    font-size: 16px;
+
+
+}
+
+.dalam-container label {
+    font-size: 15px;
+    font-weight: 200;
+    background: linear-gradient(to right, #f07334, #cd32c5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    top: 8px;
+    text-align: left;
+}
+
+.dalam-container h1 {
+    letter-spacing: 3px;
+    font-weight: 250;
+}
+
+.dalam-container p {
+    color: #FFFFFF9C;
+    word-spacing: 5px;
+}
+
+.dalam-container u {
+    color: white;
+}
+
+.image-container {
+    border-radius: 8px;
+    border: 7px solid #404040;
+}
+
+.container {
+    opacity: 1;
+    transform: translateY(-120px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    animation: fadeInContainer 1s ease forwards; /* Container muncul terlebih dahulu */
+}
+
+.dalam-container {
+    opacity: 0;
+    transform: translateY(-100px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    animation: fadeInContainer 1s ease forwards; /* Container muncul terlebih dahulu */
+}
+
+.background > h1,
+.background > div.search-container,
+.background > hr,
+.background > header,
+.background > div.rak-buku,
+.background > img,
+.background > p,
+.background > a,
+.background > div.icon {
+    opacity: 0;
+    transform: translateY(-20px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.background > div:nth-child(1) {
+    animation: fadeInSlideIn 1s ease 0.2s forwards; /* Gambar muncul setelah 0.2 detik */
+}
+
+.background > h1 {
+    animation: fadeInSlideIn 1s ease 0.4s forwards; /* H1 muncul setelah 0.6 detik */
+}
+
+.background > div.search-container {
+    animation: fadeInSlideIn 1s ease 0.6s forwards; /* Paragraf muncul setelah 0.8 detik */
+}
+
+.background > hr {
+    animation: fadeInSlideIn 1s ease 0.8s forwards; /* Tombol muncul setelah 1 detik */
+}
+
+.background > header {
+    animation: fadeInSlideIn 1s ease 1s forwards; /* Tombol muncul setelah 1 detik */
+}
+
+.background > div.rak-buku {
+    animation: fadeInSlideIn 1s ease 1.2s forwards; /* Tombol muncul setelah 1 detik */
+}
+
+@keyframes fadeInSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Berakhir di posisi awal */
+    }
+}
+
+@keyframes fadeInContainer {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Berakhir di posisi awal */
+    }
+}
+
+.rak-buku {
+    display: flex;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.rak-buku label {
+    margin: 7px;
+}
+
+.buku {
+    width: calc(33.333% - 20px); /* 33.333% lebar untuk setiap buku, sisanya untuk margin */
+    margin: 10px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    background-color: #000000;
+}
+
+.buku p {
+    text-align: left
+}
+
+.judul-buku {
+    margin: 7px;
+    font-size: 11px;
+}
+
+.stock-buku {
+    margin: 7px;
+    font-size: 11px;
+}
+
+.harga-buku p {
+    margin: 7px;
+    font-size: 12px;
+    color: rgb(0, 128, 255);
+}
+
+.buku img {
+    width: 100%;
+    height: 350px;
+    
+}
+  /* Atur responsivitas */
+@media screen and (max-width: 768px) {
+    .buku {
+      width: calc(50% - 20px); /* 50% lebar untuk setiap buku di layar berukuran kecil */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .buku {
+      width: calc(100% - 20px); /* Satu buku per baris di layar sangat kecil */
+    }
+}
+
+.search-container {
+    position: relative; /* Menentukan posisi relatif */
+    margin-bottom: 20px;    
+}
+
+.search-container i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    right: 15px;
+}
+.search-container input {
+    height: 30px;/* Mengubah tinggi input *//* Menyesuaikan lebar input dengan padding */
+    border-radius: 7px;
+    border: none;
+    width: 100%;
+    outline: none;
+    padding: 5px;
+    box-sizing: border-box; /* Menyertakan padding dalam lebar total */
+}
+
+.data-buku {
+    border: 1px solid #4CAF50;
+}
+
+.beli-btn {
+    
+    background-color: #4CAF50; /* Hijau */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 12px 7px;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: background-color 0.3s ease;
+}
+
+.beli-btn:hover {
+    background-color: red; /* Hijau yang lebih gelap saat dihover */
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    background: linear-gradient(to right, #f07334, #cd32c5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+    margin-right: 3px;
+}
+
+.logo span {
+    background: linear-gradient(to right, #f07334, #cd32c5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    padding: 16px;
+}
+
+.navbar a {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding:  5px 0;
+    margin: 0 10px;
+    transition: all .50s ease;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: greenyellow;
+    font-weight: 400;
+    font-size: 1rem;
+    text-decoration: underline 2px solid;
+    color: greenyellow;
+}
+
+.navbar a.active {
+    text-decoration: underline 2px solid;
+    color: greenyellow;
+}
+
+.nav-user {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.user img {
+    border-radius: 50%;
+    width: 40px; /* Ubah sesuai kebutuhan */
+    height: 40px; /* Ubah sesuai kebutuhan */
+    display: block; /* Agar gambar memiliki margin atas dan bawah */
+}
+
+.rgb::before , .rgb::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
+    background-size: 400%;
+    width: calc(100%);
+    height: calc(100%);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+    border-radius: 30px;
+}
+
+@keyframes animate {
+        0% {
+            background-position: 0 0;
+        }
+        50% {
+            background-position: 400% 0;
+        }
+        100% {
+            background-position: 0 0;
+        }
+}
+
+.rgb::after {
+    filter: blur(40px);
+    opacity: 0.99px;
+}
+
+.background {
+    padding: 30px;
+    border: 10px solid #535353;
+    background-color: #28272E;
+    width: 750px;   
+}

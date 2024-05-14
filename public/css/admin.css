@@ -1,0 +1,246 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Martian Mono", monospace; 
+}
+.container {
+    background-color: #242329;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle, #535353 1px, transparent 1px),
+        #242329; /* Warna latar belakang */
+    background-size: 20px 20px; /* Ukuran dot */
+
+}
+
+.background {
+    text-align: center;
+    padding: 30px;
+    border-radius: 30px;
+    border: 1px solid #535353;
+    background-color: #28272E;
+    width: 480px;   
+}
+
+.dalam-container img {
+    width: 120px;
+    border-radius: 50%;
+}
+
+.dalam-container label {
+    font-size: 30px;
+    font-weight: 200;
+    background: linear-gradient(to right, #f07334, #cd32c5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dalam-container h1 {
+    font-weight: 250;
+    font-size: 20px;
+}
+
+.dalam-container p {
+    color: #FFFFFF9C;
+    word-spacing: 5px;
+}
+
+.dalam-container u {
+    color: white;
+}
+  /* Efek hover */
+
+.container {
+    opacity: 1;
+    transform: translateY(-120px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    animation: fadeInContainer 1s ease forwards; /* Container muncul terlebih dahulu */
+}
+
+.rgb {
+    opacity: 1;
+    transform: translateY(-120px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    animation: fadeInContainer 1s ease forwards; /* Container muncul terlebih dahulu */
+}
+
+.background {
+    opacity: 1;
+    transform: translateY(-100px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    animation: fadeInContainer 1s ease forwards; /* Container muncul terlebih dahulu */
+}
+
+.background > i,
+.background > h1,
+.background > label, 
+.background > div.icon, 
+.background > div.button, 
+    .background > a {
+
+    opacity: 0;
+    transform: translateY(-20px); /* Mulai dari luar layar di atas */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.background > i {
+    animation: fadeInSlideIn 1s ease 0.2s forwards; /* H1 muncul setelah 0.6 detik */
+}
+
+.background > div.button {
+    animation: fadeInSlideIn 1s ease 0.4s forwards; /* Ikon muncul setelah 1.4 detik */
+}
+
+.background > h1 {
+    animation: fadeInSlideIn 1s ease 0.6s forwards; /* H1 muncul setelah 0.6 detik */
+}
+
+.background > div.icon {
+    animation: fadeInSlideIn 1s ease 0.8s forwards; /* H1 muncul setelah 0.6 detik */
+}
+
+
+.background > label {
+    animation: fadeInSlideIn 1s ease 1s forwards; /* Paragraf muncul setelah 0.8 detik */
+}
+
+@keyframes fadeInSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Berakhir di posisi awal */
+    }
+}
+
+@keyframes fadeInContainer {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Berakhir di posisi awal */
+    }
+}
+
+.rgb::before , .rgb::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
+    background-size: 400%;
+    width: calc(100%);
+    height: calc(100%);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+    border-radius: 30px;
+}
+
+@keyframes animate {
+        0% {
+            background-position: 0 0;
+        }
+        50% {
+            background-position: 400% 0;
+        }
+        100% {
+            background-position: 0 0;
+        }
+}
+
+.rgb::after {
+    filter: blur(40px);
+    opacity: 0.99px;
+}
+
+.button {
+    padding: 7px;
+    
+}
+
+.button button {
+    color: white;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: #28272E;
+    font-size: 17px;
+    outline: none;
+    border-radius: 7px;
+    padding: 7px;
+    width: 100px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button button:hover {
+    transition: 0.3s;
+    color: white;
+    border: 2px solid rgb(255, 255, 255);
+    font-size: 13px;
+    background: #57565c; /* Warna latar belakang */
+    outline: none;
+    border-radius: 7px;
+    padding: 5px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.button a { 
+    padding: 3px;
+    background: linear-gradient(to right, #0000ff, #ffffff, #ff0000); /* Warna latar belakang */
+}
+
+
+.icon {
+    font-size: 25px;
+    text-align: center;
+    position: relative;
+    top: 14px;
+}
+
+.icon a {
+    text-align: center;
+    margin-right: 1px;
+    color: white;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.icon a:hover {
+    transition: 0.3s;
+    font-size: 30px;
+    background: linear-gradient(to right, #8C51D6, #DE8B5D, #F29D6D); /* Warna latar belakang */
+    -webkit-background-clip: text; /* Safari */
+    background-clip: text; /* Standard */
+    color: transparent;
+}
+hr {
+    border: none;
+    height: 3px;
+    background-color: #333; /* Warna garis */
+    margin: 20px 0; /* Jarak atas dan bawah */
+}
+/* CSS untuk animasi garis horizontal */
+hr.animated {
+    width: 100%;
+    position: relative;
+    animation: growAndColorChange 3s ease-in-out;
+}
+@keyframes growAndColorChange {
+    0% {
+        width: 0%;
+        background-color: blue;
+    }
+    40% {
+        width: 0%;
+        background-color: red;
+    }
+    70% {
+        width: 40%;
+        background-color: green;
+    }
+
+    100% {
+        width: 100%;
+        background-color: #333;
+    }   
+}
